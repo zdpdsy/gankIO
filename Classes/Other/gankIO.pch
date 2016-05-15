@@ -1,0 +1,39 @@
+//
+//  gankIO.pch
+//  gankIO
+//
+//  Created by 曾大鹏 on 16/3/21.
+//  Copyright © 2016年 曾大鹏. All rights reserved.
+//
+
+#ifndef gankIO_pch
+#define gankIO_pch
+#import "UIImage+image.h"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* gankIO_pch */
+
+// ...表示宏定义的可变参数
+// __VA_ARGS__:表示函数里面的可变参数
+#ifdef DEBUG // 调试
+
+#define GkLog(...) NSLog(__VA_ARGS__)
+
+#else // 发布
+
+#define GkLog(...)
+
+#endif
+
+#define GkColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+
+/*statuscell*/
+#define GkCellStatusMargin 10
+#define GkTextFont [UIFont systemFontOfSize:15]
+
+/*common*/
+#define GkSreenW [UIScreen mainScreen].bounds.size.width
+#define GkSreenH [UIScreen mainScreen].bounds.size.height
+#define GkUserDefaults [NSUserDefaults standardUserDefaults]
+#define nativeColor GkColor(41, 175, 236)
